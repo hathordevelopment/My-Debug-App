@@ -18,7 +18,21 @@ namespace MyDbgApp.Pages
 
         public void OnGet()
         {
-            Message = "Your application description page.";
+            LinkedList<int> result = doWork();
+            Message = "Result of work: " + result.First.Value + ", " + result.First.Value;
+        }
+
+        private static LinkedList<int> doWork()
+        {
+            LinkedList<int> c1 = new LinkedList<int>();
+
+            c1.AddLast(10);
+            c1.AddLast(20);
+
+            LinkedList<int> c2 = new LinkedList<int>(c1);
+
+            return c2;
+
         }
     }
 }
